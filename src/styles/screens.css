@@ -1,0 +1,499 @@
+/* ========================================
+   SCREEN STYLES
+   ======================================== */
+
+/* ========================================
+   Home Screen
+   ======================================== */
+.home-screen {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-2xl);
+}
+
+.home-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.home-logo .emoji-display {
+  font-size: 5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.home-title {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+}
+
+.home-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 280px;
+}
+
+.home-footer {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* ========================================
+   Setup Screen
+   ======================================== */
+.setup-screen .screen-content {
+  gap: var(--spacing-lg);
+}
+
+.setup-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.setup-section-title {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.roles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* ========================================
+   Players Screen
+   ======================================== */
+.players-screen .screen-content {
+  gap: var(--spacing-md);
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.players-count {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.add-player-form {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+/* ========================================
+   Reveal Screen
+   ======================================== */
+.reveal-screen {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal-pass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.reveal-pass-title {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+.reveal-pass-name {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reveal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+  animation: revealIn 0.5s ease forwards;
+}
+
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotateX(20deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateX(0);
+  }
+}
+
+.reveal-role {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.reveal-role-emoji {
+  font-size: 4rem;
+}
+
+.reveal-role-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.reveal-word {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+  min-width: 200px;
+}
+
+.reveal-word-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.reveal-word-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-top: var(--spacing-xs);
+}
+
+.reveal-hint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 280px;
+}
+
+/* ========================================
+   Play Screen
+   ======================================== */
+.play-screen .screen-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.play-current {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.play-current-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.play-current-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.play-current-role {
+  margin-top: var(--spacing-md);
+}
+
+.play-timer-container {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.play-players-done {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.play-player-chip {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-full);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.play-player-chip.done {
+  background: var(--color-success);
+  color: white;
+  border-color: var(--color-success);
+}
+
+.play-player-chip.current {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+  animation: pulse 1.5s infinite;
+}
+
+/* ========================================
+   Vote Screen
+   ======================================== */
+.vote-screen .screen-content {
+  gap: var(--spacing-md);
+}
+
+.vote-instruction {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-md);
+}
+
+.vote-instruction-voter {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.vote-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.vote-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.vote-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-color);
+}
+
+.vote-item.selected {
+  border-color: var(--color-danger);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.vote-item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.vote-count {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   Results Screen
+   ======================================== */
+.results-screen {
+  text-align: center;
+}
+
+.results-winner {
+  padding: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.results-winner-emoji {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-md);
+  animation: float 2s ease-in-out infinite;
+}
+
+.results-winner-text {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.results-winner-team {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: var(--spacing-sm);
+}
+
+.results-winner-team.civil {
+  color: var(--color-civil);
+}
+
+.results-winner-team.undercover {
+  color: var(--color-undercover);
+}
+
+.results-winner-team.mr_white {
+  color: var(--color-mr-white);
+}
+
+.results-words {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.results-word-card {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  flex: 1;
+  max-width: 150px;
+}
+
+.results-word-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.results-word-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: var(--spacing-xs);
+}
+
+.results-players {
+  text-align: left;
+}
+
+.results-players h3 {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.results-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.results-player-name {
+  font-weight: 500;
+}
+
+.results-player.eliminated {
+  opacity: 0.6;
+}
+
+/* ========================================
+   Mr. White Guess Modal
+   ======================================== */
+.mr-white-guess {
+  text-align: center;
+}
+
+.mr-white-guess .emoji-display {
+  margin-bottom: var(--spacing-md);
+}
+
+.mr-white-guess .input {
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* ========================================
+   Rules Modal
+   ======================================== */
+.rules-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.rules-content h3 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--accent-light);
+}
+
+.rules-content p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.rules-content ul {
+  margin-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.rules-content li {
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-secondary);
+}
+
+.rules-role {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.rules-role-emoji {
+  font-size: 1.5rem;
+}
+
+.rules-role-info {
+  flex: 1;
+}
+
+.rules-role-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.rules-role-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
